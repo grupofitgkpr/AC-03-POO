@@ -10,8 +10,9 @@ public class Faculdade {
     // Atributos
     
     private String nome;
-    private ArrayList<Estudante> estudantes = new ArrayList<Estudante>();
-    private ArrayList<Disciplina> disciplinas = new ArrayList<Disciplina>();
+    private ArrayList<Estudante> estudantes = new ArrayList<>();
+    private ArrayList<Disciplina> disciplinas = new ArrayList<>();
+    private ArrayList<Matricula> matriculas = new ArrayList<>();
 
     // Construtores
     
@@ -92,7 +93,6 @@ public class Faculdade {
                          indEstudante = estudantes.indexOf(estudante);
                 }
                 
-
                 Matricula matricula = new Matricula(estudantes.get(indEstudante),disciplinas.get(indDisciplina));
                 disciplinas.get(indDisciplina).addMatricula(matricula);
                 estudantes.get(indEstudante).addMatricula(matricula);
@@ -131,4 +131,11 @@ public class Faculdade {
         this.disciplinas = disciplinas;
     }
     
+    public ArrayList<Matricula> getMatriculas() {
+        return matriculas;
+    }
+
+    public void setMatriculas(ArrayList<Matricula> matriculas) {
+        this.matriculas = matriculas;
+    }
 }

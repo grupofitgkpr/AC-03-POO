@@ -25,16 +25,12 @@ public class Disciplina {
     }
     
     public ArrayList getEstudantesMatriculados() { // Retorna uma lista de estudantes matriculados
-
-        ArrayList<String> estudantesMatriculados = new ArrayList<String>();
-
+        ArrayList<Estudante> estudantesMatriculados = new ArrayList<Estudante>();
+        
         for (Matricula matricula : matriculas) {
-
-            String estudante = matricula.getEstudante().getNome();
-
+            Estudante estudante = matricula.getEstudante();
             estudantesMatriculados.add(estudante);
         }
-
         return estudantesMatriculados;
     }
 

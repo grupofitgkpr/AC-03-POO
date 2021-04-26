@@ -23,16 +23,12 @@ public class Estudante {
     }
 
     public ArrayList getDisciplinasMatriculadas() {
-
-        ArrayList<String> disciplinasMatriculadas = new ArrayList<String>();
+        ArrayList<Disciplina> disciplinasMatriculadas = new ArrayList<Disciplina>();
 
         for (Matricula matricula : matriculas) {
-
-            String disciplina = matricula.getDisciplina().getCodigo();
-
+            Disciplina disciplina = matricula.getDisciplina();
             disciplinasMatriculadas.add(disciplina);
         }
-
         return disciplinasMatriculadas;
     }
 
