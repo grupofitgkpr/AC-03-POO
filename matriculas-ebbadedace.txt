@@ -1,0 +1,7 @@
+01191196:Estrutura de Dados
+01191196:Programação Orientada a Objetos
+01191196:Sistemas Operacionais
+15551884:Programação Orientada a Objetos
+15551884:Estrutura de Dados
+21917992:Programação Orientada a Objetos
+21917992:Sistemas Operacionais

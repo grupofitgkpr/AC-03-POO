@@ -8,20 +8,17 @@ import java.util.ArrayList;
 public class Faculdade {
 
     // Atributos
-    
     private String nome;
     private ArrayList<Estudante> estudantes = new ArrayList<>();
     private ArrayList<Disciplina> disciplinas = new ArrayList<>();
     private ArrayList<Matricula> matriculas = new ArrayList<>();
 
     // Construtores
-    
     public Faculdade(String nomeFaculdadeEsperado) {
         this.nome = nomeFaculdadeEsperado;
     }
     
     // Métodos públicos
-
     public void carregarDadosArquivo(String nomeArquivoDisciplinas, String nomeArquivoEstudantes, String nomeArquivoMatriculas) {
         
         String pathDisciplinas = nomeArquivoDisciplinas;
@@ -29,9 +26,7 @@ public class Faculdade {
         String pathMatriculas = nomeArquivoMatriculas;
         
         // Ler o arquivo TXT de disciplinas, cortar e adicionar na lista de disciplinas
-        
         try (BufferedReader br = new BufferedReader(new FileReader(pathDisciplinas))){
-            
             String linha = br.readLine();
             while (linha != null){
                 
@@ -40,18 +35,15 @@ public class Faculdade {
                 Integer creditos = Integer.parseInt(vetor[1]);
                 
                 Disciplina disciplina = new Disciplina(codigo, creditos);
-                
                 disciplinas.add(disciplina);
                 
                 linha = br.readLine();
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
         
         // Ler o arquivo TXT de estudantes, cortar e adicionar na lista de estudantes
-        
         try (BufferedReader br = new BufferedReader(new FileReader(pathEstudantes))){
             
             String linha = br.readLine();
@@ -63,23 +55,18 @@ public class Faculdade {
                 String email = vetor[2];
                 
                 Estudante estudante = new Estudante(id, nome, email);
-                
                 estudantes.add(estudante);
                 
                 linha = br.readLine();
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
             
-        // Ler o arquivo TXT de matriculas
-        
+        // Ler o arquivo TXT de matriculas, cortar e adicionar na lista de matriculas
         try (BufferedReader br = new BufferedReader(new FileReader(pathMatriculas))){
-            
             String linha = br.readLine();
             while (linha != null){
-                
                 String[] vetor = linha.split(":");
                 int indEstudante = 0, indDisciplina = 0;
                 
@@ -90,7 +77,7 @@ public class Faculdade {
                 
                 for(Estudante estudante: estudantes){
                     if(estudante.getId() == Long.parseLong(vetor[0]))
-                         indEstudante = estudantes.indexOf(estudante);
+                        indEstudante = estudantes.indexOf(estudante);
                 }
                 
                 Matricula matricula = new Matricula(estudantes.get(indEstudante),disciplinas.get(indDisciplina));
@@ -98,15 +85,13 @@ public class Faculdade {
                 estudantes.get(indEstudante).addMatricula(matricula);
                 linha = br.readLine();
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
         
     }
     
     // Métodos especiais
-
     public String getNome() {
         return nome;
     }
