@@ -17,6 +17,7 @@ public class GestaoAcademicaApp1 {
         
         // Criação da Faculdade com base nos arquivos
         Faculdade faculdade = new Faculdade("Faculdade Fictícia");
+
         faculdade.carregarDadosArquivo("disciplinas-ebbadedace.txt",
                                        "estudantes-ebbadedace.txt",
                                        "matriculas-ebbadedace.txt");
@@ -25,8 +26,8 @@ public class GestaoAcademicaApp1 {
             System.out.println("-------- Menu --------");
             Scanner input = new Scanner(System.in);
             System.out.println("[0] Encerrar programa\n"
-                              +"[1] Lista de todos os estudantes\n"
-                              +"[2] Lista de todas as disciplinas\n"
+                              +"[1] Lista o nome e id dos estudantes\n"
+                              +"[2] Lista o código das disciplinas\n"
                               +"[3] Estudantes matriculados em X disciplina\n"
                               +"[4] Disciplinas matriculadas em X aluno\n"
                               +"Digite a opção desejada:");
@@ -67,7 +68,7 @@ public class GestaoAcademicaApp1 {
         // Iterar lista de disciplinas
         System.out.println("\n--- Lista de Disciplinas ---");
         for (Disciplina disciplina : disciplinas)
-            System.out.println("Disciplina: " + disciplina.getCodigo());
+            System.out.println("Código: " + disciplina.getCodigo());
     }
 
     private static void listarEstDisc(ArrayList<Disciplina> disciplinas) {
