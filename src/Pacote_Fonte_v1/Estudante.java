@@ -8,7 +8,7 @@ public class Estudante {
     private long id;
     private String nome;
     private String email;
-    private ArrayList<Matricula> matriculas = new ArrayList<Matricula>();
+    private ArrayList<Matricula> matriculas = new ArrayList<>();
 
     // Construtores
     public Estudante(long id, String nome, String email) {
@@ -23,8 +23,7 @@ public class Estudante {
     }
 
     public ArrayList getDisciplinasMatriculadas() {
-        ArrayList<Disciplina> disciplinasMatriculadas = new ArrayList<Disciplina>();
-
+        ArrayList<Disciplina> disciplinasMatriculadas = new ArrayList<>();
         for (Matricula matricula : matriculas) {
             Disciplina disciplina = matricula.getDisciplina();
             disciplinasMatriculadas.add(disciplina);
@@ -64,5 +63,4 @@ public class Estudante {
     public void setMatriculas(ArrayList<Matricula> matriculas) {
         this.matriculas = matriculas;
     }
-
 }

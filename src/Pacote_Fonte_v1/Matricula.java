@@ -7,15 +7,12 @@ public class Matricula {
     private Disciplina disciplina;
 
     // Construtores
-
     public Matricula(Estudante estudante, Disciplina disciplina) {
         this.estudante = estudante;
         this.disciplina = disciplina;
     }
     
-    // Métodos Públicos
     // Métodos Especiais
-    
     public Estudante getEstudante() {
         return estudante;
     }
