@@ -80,7 +80,22 @@ public class Faculdade {
             while (linha != null){
                 
                 String[] vetor = linha.split(":");
+                int indEstudante = 0, indDisciplina = 0;
                 
+                for(Disciplina disciplina: disciplinas){
+                    if(disciplina.getCodigo().equals(vetor[1]))
+                         indDisciplina = disciplinas.indexOf(disciplina);
+                }
+                
+                for(Estudante estudante: estudantes){
+                    if(estudante.getId() == Long.parseLong(vetor[0]))
+                         indEstudante = estudantes.indexOf(estudante);
+                }
+                
+
+                Matricula matricula = new Matricula(estudantes.get(indEstudante),disciplinas.get(indDisciplina));
+                disciplinas.get(indDisciplina).addMatricula(matricula);
+                estudantes.get(indEstudante).addMatricula(matricula);
                 linha = br.readLine();
             }
         }
