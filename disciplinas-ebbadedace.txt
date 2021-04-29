@@ -1,7 +1,3 @@
 Estrutura de Dados:80
-<<<<<<< HEAD:disciplinas-ebbadedace.txt
 Programação Orientada a Objetos:40
-=======
-ProgramaÃ§Ã£o Orientada a Objetos:40
->>>>>>> 66b253f66fde39799df7e8039582e555bbdc18ca:disciplinas-bccdbdedee.txt
 Sistemas Operacionais:80
